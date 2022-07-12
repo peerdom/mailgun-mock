@@ -167,11 +167,11 @@ func ws(w http.ResponseWriter, r *http.Request) {
 func postMessages(w http.ResponseWriter, r *http.Request) {
 	log.Printf("%s %s", r.Method, r.URL.Path)
 
-	usr, pas, ok := r.BasicAuth()
-	if !ok || usr != "api" || pas != config.apiKey {
-		w.WriteHeader(http.StatusUnauthorized)
-		return
-	}
+	// usr, pas, ok := r.BasicAuth()
+	// if !ok || usr != "api" || pas != config.apiKey {
+	// 	w.WriteHeader(http.StatusUnauthorized)
+	// 	return
+	// }
 
 	err := r.ParseMultipartForm(20 * 1024 * 1024)
 	if err != nil {
